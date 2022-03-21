@@ -18,22 +18,17 @@ contract Storage is AccessControlEnumerable {
     _setupRole(EDITOR_ROLE, _msgSender());
   }
     
-  modifier onlyEditor() {
-    require(hasRole(EDITOR_ROLE,msg.sender), "only EDITOR can execute");
-    _;
-  }
-
   /* bool */
   
   function getBool(bytes32 _key) external view returns(bool) {
     return boolStorage[_key];
   }
   
-  function setBool(bytes32 _key, bool _value) onlyEditor external {
+  function setBool(bytes32 _key, bool _value) onlyRole(EDITOR_ROLE) external {
     boolStorage[_key] = _value;
   }  
 
-  function deleteBool(bytes32 _key) onlyEditor external {
+  function deleteBool(bytes32 _key) onlyRole(EDITOR_ROLE) external {
     delete boolStorage[_key];
   }
     
@@ -43,11 +38,11 @@ contract Storage is AccessControlEnumerable {
     return intStorage[_key];
   }
   
-  function setInt(bytes32 _key, int _value) onlyEditor external {
+  function setInt(bytes32 _key, int _value) onlyRole(EDITOR_ROLE) external {
     intStorage[_key] = _value;
   }
 
-  function deleteInt(bytes32 _key) onlyEditor external {
+  function deleteInt(bytes32 _key) onlyRole(EDITOR_ROLE) external {
     delete intStorage[_key];
   }
     
@@ -57,11 +52,11 @@ contract Storage is AccessControlEnumerable {
     return uintStorage[_key];
   }
   
-  function setUint(bytes32 _key, uint _value) onlyEditor external {
+  function setUint(bytes32 _key, uint _value) onlyRole(EDITOR_ROLE) external {
     uintStorage[_key] = _value;
   }
 
-  function deleteUint(bytes32 _key) onlyEditor external {
+  function deleteUint(bytes32 _key) onlyRole(EDITOR_ROLE) external {
     delete uintStorage[_key];
   }
 
@@ -71,11 +66,11 @@ contract Storage is AccessControlEnumerable {
     return addressStorage[_key];
   }
 
-  function setAddress(bytes32 _key, address _value) onlyEditor external {
+  function setAddress(bytes32 _key, address _value) onlyRole(EDITOR_ROLE) external {
     addressStorage[_key] = _value;
   }
 
-  function deleteAddress(bytes32 _key) onlyEditor external {
+  function deleteAddress(bytes32 _key) onlyRole(EDITOR_ROLE) external {
     delete addressStorage[_key];
   }
 
@@ -85,11 +80,11 @@ contract Storage is AccessControlEnumerable {
     return bytes32Storage[_key];
   }
 
-  function setBytes32(bytes32 _key, bytes32 _value) onlyEditor external {
+  function setBytes32(bytes32 _key, bytes32 _value) onlyRole(EDITOR_ROLE) external {
     bytes32Storage[_key] = _value;
   }
     
-  function deleteBytes32(bytes32 _key) onlyEditor external {
+  function deleteBytes32(bytes32 _key) onlyRole(EDITOR_ROLE) external {
     delete bytes32Storage[_key];
   }
   
@@ -99,11 +94,11 @@ contract Storage is AccessControlEnumerable {
     return bytesStorage[_key];
   }
 
-  function setBytes(bytes32 _key, bytes memory _value) onlyEditor external {
+  function setBytes(bytes32 _key, bytes memory _value) onlyRole(EDITOR_ROLE) external {
     bytesStorage[_key] = _value;
   }
 
-  function deleteBytes(bytes32 _key) onlyEditor external {
+  function deleteBytes(bytes32 _key) onlyRole(EDITOR_ROLE) external {
     delete bytesStorage[_key];
   }
 
@@ -113,11 +108,11 @@ contract Storage is AccessControlEnumerable {
     return stringStorage[_key];
   }
     
-  function setString(bytes32 _key, string memory _value) onlyEditor external {
+  function setString(bytes32 _key, string memory _value) onlyRole(EDITOR_ROLE) external {
     stringStorage[_key] = _value;
   }
 
-  function deleteString(bytes32 _key) onlyEditor external {
+  function deleteString(bytes32 _key) onlyRole(EDITOR_ROLE) external {
     delete stringStorage[_key];
   }
 
