@@ -1,6 +1,6 @@
 {
   "name": "@asteroid-dao/eternal-storage",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.5.0",
-    "big.js": "^6.1.1"
+    "big.js": "^6.1.1",
+    "ramda": "^0.28.0"
   },
   "scripts": {
     "test": "hardhat test",

@@ -12,6 +12,14 @@ contract Storage is AccessControlEnumerable {
   mapping(bytes32 => bytes32) bytes32Storage;
   mapping(bytes32 => bytes) bytesStorage;
   mapping(bytes32 => string) stringStorage;
+
+  mapping(bytes32 => bool[]) boolArray;
+  mapping(bytes32 => int[]) intArray;
+  mapping(bytes32 => uint[]) uintArray;
+  mapping(bytes32 => address[]) addressArray;
+  mapping(bytes32 => bytes32[]) bytes32Array;
+  mapping(bytes32 => bytes[]) bytesArray;
+  mapping(bytes32 => string[]) stringArray;
     
   constructor() {
     _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
@@ -116,4 +124,102 @@ contract Storage is AccessControlEnumerable {
     delete stringStorage[_key];
   }
 
+  /* bool array */
+  
+  function getBoolArray(bytes32 _key) external view returns(bool[] memory) {
+    return boolArray[_key];
+  }
+  
+  function setBoolArray(bytes32 _key, bool[] memory _value) onlyRole(EDITOR_ROLE) external {
+    boolArray[_key] = _value;
+  }  
+
+  function deleteBoolArray(bytes32 _key) onlyRole(EDITOR_ROLE) external {
+    delete boolArray[_key];
+  }
+    
+  /* int array */
+  
+  function getIntArray(bytes32 _key) external view returns(int[] memory) {
+    return intArray[_key];
+  }
+  
+  function setIntArray(bytes32 _key, int[] memory _value) onlyRole(EDITOR_ROLE) external {
+    intArray[_key] = _value;
+  }
+
+  function deleteIntArray(bytes32 _key) onlyRole(EDITOR_ROLE) external {
+    delete intArray[_key];
+  }
+    
+  /* uint array */
+  
+  function getUintArray(bytes32 _key) external view returns(uint[] memory) {
+    return uintArray[_key];
+  }
+  
+  function setUintArray(bytes32 _key, uint[] memory _value) onlyRole(EDITOR_ROLE) external {
+    uintArray[_key] = _value;
+  }
+
+  function deleteUintArray(bytes32 _key) onlyRole(EDITOR_ROLE) external {
+    delete uintArray[_key];
+  }
+
+  /* address array */
+
+  function getAddressArray(bytes32 _key) external view returns(address[] memory) {
+    return addressArray[_key];
+  }
+
+  function setAddressArray(bytes32 _key, address[] memory _value) onlyRole(EDITOR_ROLE) external {
+    addressArray[_key] = _value;
+  }
+
+  function deleteAddressArray(bytes32 _key) onlyRole(EDITOR_ROLE) external {
+    delete addressArray[_key];
+  }
+
+  /* bytes32 array */
+
+  function getBytes32Array(bytes32 _key) external view returns(bytes32[] memory) {
+    return bytes32Array[_key];
+  }
+
+  function setBytes32Array(bytes32 _key, bytes32[] memory _value) onlyRole(EDITOR_ROLE) external {
+    bytes32Array[_key] = _value;
+  }
+    
+  function deleteBytes32Array(bytes32 _key) onlyRole(EDITOR_ROLE) external {
+    delete bytes32Array[_key];
+  }
+  
+  /* bytes array */
+
+  function getBytesArray(bytes32 _key) external view returns(bytes[] memory) {
+    return bytesArray[_key];
+  }
+
+  function setBytesArray(bytes32 _key, bytes[] memory _value) onlyRole(EDITOR_ROLE) external {
+    bytesArray[_key] = _value;
+  }
+
+  function deleteBytesArray(bytes32 _key) onlyRole(EDITOR_ROLE) external {
+    delete bytesArray[_key];
+  }
+
+  /* string array */
+  
+  function getStringArray(bytes32 _key) external view returns(string[] memory) {
+    return stringArray[_key];
+  }
+    
+  function setStringArray(bytes32 _key, string[] memory _value) onlyRole(EDITOR_ROLE) external {
+    stringArray[_key] = _value;
+  }
+
+  function deleteStringArray(bytes32 _key) onlyRole(EDITOR_ROLE) external {
+    delete stringArray[_key];
+  }
+  
 }
