@@ -5,115 +5,115 @@ interface IStorage  {
 
   /* bool */
   
-  function getBool(bytes32 _key) external view returns(bool);
+  function getBool(bytes memory _key) external view returns(bool);
   
-  function setBool(bytes32 _key, bool _value) external;
+  function setBool(bytes memory _key, bool _value) external;
 
-  function deleteBool(bytes32 _key) external;
+  function deleteBool(bytes memory _key) external;
     
   /* int */
   
-  function getInt(bytes32 _key) external view returns(int);
+  function getInt(bytes memory _key) external view returns(int);
   
-  function setInt(bytes32 _key, int _value) external;
+  function setInt(bytes memory _key, int _value) external;
 
-  function deleteInt(bytes32 _key) external;
+  function deleteInt(bytes memory _key) external;
     
   /* uint */
   
-  function getUint(bytes32 _key) external view returns(uint);
+  function getUint(bytes memory _key) external view returns(uint);
   
-  function setUint(bytes32 _key, uint _value) external;
+  function setUint(bytes memory _key, uint _value) external;
 
-  function deleteUint(bytes32 _key) external;
+  function deleteUint(bytes memory _key) external;
 
   /* address */
 
-  function getAddress(bytes32 _key) external view returns(address);
+  function getAddress(bytes memory _key) external view returns(address);
 
-  function setAddress(bytes32 _key, address _value) external;
+  function setAddress(bytes memory _key, address _value) external;
 
-  function deleteAddress(bytes32 _key) external;
+  function deleteAddress(bytes memory _key) external;
 
   /* bytes32 */
 
-  function getBytes32(bytes32 _key) external view returns(bytes32);
+  function getBytes32(bytes memory _key) external view returns(bytes32);
 
-  function setBytes32(bytes32 _key, bytes32 _value) external;
+  function setBytes32(bytes memory _key, bytes32 _value) external;
     
-  function deleteBytes32(bytes32 _key) external;
+  function deleteBytes32(bytes memory _key) external;
   
   /* bytes */
 
-  function getBytes(bytes32 _key) external view returns(bytes memory);
+  function getBytes(bytes memory _key) external view returns(bytes memory);
 
-  function setBytes(bytes32 _key, bytes memory _value) external;
+  function setBytes(bytes memory _key, bytes memory _value) external;
 
-  function deleteBytes(bytes32 _key) external;
+  function deleteBytes(bytes memory _key) external;
 
   /* string */
   
-  function getString(bytes32 _key) external view returns(string memory);
+  function getString(bytes memory _key) external view returns(string memory);
     
-  function setString(bytes32 _key, string memory _value) external;
+  function setString(bytes memory _key, string memory _value) external;
 
-  function deleteString(bytes32 _key) external;
+  function deleteString(bytes memory _key) external;
 
   
   /* bool array */
   
-  function getBoolArray(bytes32 _key) external view returns(bool[] memory);
+  function getBoolArray(bytes memory _key) external view returns(bool[] memory);
   
-  function setBoolArray(bytes32 _key, bool[] memory _value) external;
+  function setBoolArray(bytes memory _key, bool[] memory _value) external;
 
-  function deleteBoolArray(bytes32 _key) external;
+  function deleteBoolArray(bytes memory _key) external;
     
   /* int array */
   
-  function getIntArray(bytes32 _key) external view returns(int[] memory);
+  function getIntArray(bytes memory _key) external view returns(int[] memory);
   
-  function setIntArray(bytes32 _key, int[] memory _value) external;
+  function setIntArray(bytes memory _key, int[] memory _value) external;
 
-  function deleteIntArray(bytes32 _key) external;
+  function deleteIntArray(bytes memory _key) external;
     
   /* uint array */
   
-  function getUintArray(bytes32 _key) external view returns(uint[] memory);
+  function getUintArray(bytes memory _key) external view returns(uint[] memory);
   
-  function setUintArray(bytes32 _key, uint[] memory _value) external;
+  function setUintArray(bytes memory _key, uint[] memory _value) external;
 
-  function deleteUintArray(bytes32 _key) external;
+  function deleteUintArray(bytes memory _key) external;
 
   /* address array */
 
-  function getAddressArray(bytes32 _key) external view returns(address[] memory);
+  function getAddressArray(bytes memory _key) external view returns(address[] memory);
 
-  function setAddressArray(bytes32 _key, address[] memory _value) external;
+  function setAddressArray(bytes memory _key, address[] memory _value) external;
 
-  function deleteAddressArray(bytes32 _key) external;
+  function deleteAddressArray(bytes memory _key) external;
 
   /* bytes32 array */
 
-  function getBytes32Array(bytes32 _key) external view returns(bytes32[] memory);
+  function getBytes32Array(bytes memory _key) external view returns(bytes32[] memory);
 
-  function setBytes32Array(bytes32 _key, bytes32[] memory _value) external;
+  function setBytes32Array(bytes memory _key, bytes32[] memory _value) external;
     
-  function deleteBytes32Array(bytes32 _key) external;
+  function deleteBytes32Array(bytes memory _key) external;
   
   /* bytes array */
 
-  function getBytesArray(bytes32 _key) external view returns(bytes[] memory);
+  function getBytesArray(bytes memory _key) external view returns(bytes[] memory);
 
-  function setBytesArray(bytes32 _key, bytes[] memory _value) external;
+  function setBytesArray(bytes memory _key, bytes[] memory _value) external;
 
-  function deleteBytesArray(bytes32 _key) external;
+  function deleteBytesArray(bytes memory _key) external;
 
   /* string array */
   
-  function getStringArray(bytes32 _key) external view returns(string[] memory);
+  function getStringArray(bytes memory _key) external view returns(string[] memory);
     
-  function setStringArray(bytes32 _key, string[] memory _value) external;
+  function setStringArray(bytes memory _key, string[] memory _value) external;
 
-  function deleteStringArray(bytes32 _key) external;
+  function deleteStringArray(bytes memory _keyy) external;
   
 }

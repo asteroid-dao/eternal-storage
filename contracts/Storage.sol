@@ -28,198 +28,198 @@ contract Storage is AccessControlEnumerable {
     
   /* bool */
   
-  function getBool(bytes32 _key) external view returns(bool) {
-    return boolStorage[_key];
+  function getBool(bytes memory _key) external view returns(bool) {
+    return boolStorage[keccak256(_key)];
   }
   
-  function setBool(bytes32 _key, bool _value) onlyRole(EDITOR_ROLE) external {
-    boolStorage[_key] = _value;
+  function setBool(bytes memory _key, bool _value) onlyRole(EDITOR_ROLE) external {
+    boolStorage[keccak256(_key)] = _value;
   }  
 
-  function deleteBool(bytes32 _key) onlyRole(EDITOR_ROLE) external {
-    delete boolStorage[_key];
+  function deleteBool(bytes memory _key) onlyRole(EDITOR_ROLE) external {
+    delete boolStorage[keccak256(_key)];
   }
     
   /* int */
   
-  function getInt(bytes32 _key) external view returns(int) {
-    return intStorage[_key];
+  function getInt(bytes memory _key) external view returns(int) {
+    return intStorage[keccak256(_key)];
   }
   
-  function setInt(bytes32 _key, int _value) onlyRole(EDITOR_ROLE) external {
-    intStorage[_key] = _value;
+  function setInt(bytes memory _key, int _value) onlyRole(EDITOR_ROLE) external {
+    intStorage[keccak256(_key)] = _value;
   }
 
-  function deleteInt(bytes32 _key) onlyRole(EDITOR_ROLE) external {
-    delete intStorage[_key];
+  function deleteInt(bytes memory _key) onlyRole(EDITOR_ROLE) external {
+    delete intStorage[keccak256(_key)];
   }
     
   /* uint */
   
-  function getUint(bytes32 _key) external view returns(uint) {
-    return uintStorage[_key];
+  function getUint(bytes memory _key) external view returns(uint) {
+    return uintStorage[keccak256(_key)];
   }
   
-  function setUint(bytes32 _key, uint _value) onlyRole(EDITOR_ROLE) external {
-    uintStorage[_key] = _value;
+  function setUint(bytes memory _key, uint _value) onlyRole(EDITOR_ROLE) external {
+    uintStorage[keccak256(_key)] = _value;
   }
 
-  function deleteUint(bytes32 _key) onlyRole(EDITOR_ROLE) external {
-    delete uintStorage[_key];
+  function deleteUint(bytes memory _key) onlyRole(EDITOR_ROLE) external {
+    delete uintStorage[keccak256(_key)];
   }
 
   /* address */
 
-  function getAddress(bytes32 _key) external view returns(address) {
-    return addressStorage[_key];
+  function getAddress(bytes memory _key) external view returns(address) {
+    return addressStorage[keccak256(_key)];
   }
 
-  function setAddress(bytes32 _key, address _value) onlyRole(EDITOR_ROLE) external {
-    addressStorage[_key] = _value;
+  function setAddress(bytes memory _key, address _value) onlyRole(EDITOR_ROLE) external {
+    addressStorage[keccak256(_key)] = _value;
   }
 
-  function deleteAddress(bytes32 _key) onlyRole(EDITOR_ROLE) external {
-    delete addressStorage[_key];
+  function deleteAddress(bytes memory _key) onlyRole(EDITOR_ROLE) external {
+    delete addressStorage[keccak256(_key)];
   }
 
   /* bytes32 */
 
-  function getBytes32(bytes32 _key) external view returns(bytes32) {
-    return bytes32Storage[_key];
+  function getBytes32(bytes memory _key) external view returns(bytes32) {
+    return bytes32Storage[keccak256(_key)];
   }
 
-  function setBytes32(bytes32 _key, bytes32 _value) onlyRole(EDITOR_ROLE) external {
-    bytes32Storage[_key] = _value;
+  function setBytes32(bytes memory _key, bytes32 _value) onlyRole(EDITOR_ROLE) external {
+    bytes32Storage[keccak256(_key)] = _value;
   }
     
-  function deleteBytes32(bytes32 _key) onlyRole(EDITOR_ROLE) external {
-    delete bytes32Storage[_key];
+  function deleteBytes32(bytes memory _key) onlyRole(EDITOR_ROLE) external {
+    delete bytes32Storage[keccak256(_key)];
   }
   
   /* bytes */
 
-  function getBytes(bytes32 _key) external view returns(bytes memory) {
-    return bytesStorage[_key];
+  function getBytes(bytes memory _key) external view returns(bytes memory) {
+    return bytesStorage[keccak256(_key)];
   }
 
-  function setBytes(bytes32 _key, bytes memory _value) onlyRole(EDITOR_ROLE) external {
-    bytesStorage[_key] = _value;
+  function setBytes(bytes memory _key, bytes memory _value) onlyRole(EDITOR_ROLE) external {
+    bytesStorage[keccak256(_key)] = _value;
   }
 
-  function deleteBytes(bytes32 _key) onlyRole(EDITOR_ROLE) external {
-    delete bytesStorage[_key];
+  function deleteBytes(bytes memory _key) onlyRole(EDITOR_ROLE) external {
+    delete bytesStorage[keccak256(_key)];
   }
 
   /* string */
   
-  function getString(bytes32 _key) external view returns(string memory) {
-    return stringStorage[_key];
+  function getString(bytes memory _key) external view returns(string memory) {
+    return stringStorage[keccak256(_key)];
   }
     
-  function setString(bytes32 _key, string memory _value) onlyRole(EDITOR_ROLE) external {
-    stringStorage[_key] = _value;
+  function setString(bytes memory _key, string memory _value) onlyRole(EDITOR_ROLE) external {
+    stringStorage[keccak256(_key)] = _value;
   }
 
-  function deleteString(bytes32 _key) onlyRole(EDITOR_ROLE) external {
-    delete stringStorage[_key];
+  function deleteString(bytes memory _key) onlyRole(EDITOR_ROLE) external {
+    delete stringStorage[keccak256(_key)];
   }
 
   /* bool array */
   
-  function getBoolArray(bytes32 _key) external view returns(bool[] memory) {
-    return boolArray[_key];
+  function getBoolArray(bytes memory _key) external view returns(bool[] memory) {
+    return boolArray[keccak256(_key)];
   }
   
-  function setBoolArray(bytes32 _key, bool[] memory _value) onlyRole(EDITOR_ROLE) external {
-    boolArray[_key] = _value;
+  function setBoolArray(bytes memory _key, bool[] memory _value) onlyRole(EDITOR_ROLE) external {
+    boolArray[keccak256(_key)] = _value;
   }  
 
-  function deleteBoolArray(bytes32 _key) onlyRole(EDITOR_ROLE) external {
-    delete boolArray[_key];
+  function deleteBoolArray(bytes memory _key) onlyRole(EDITOR_ROLE) external {
+    delete boolArray[keccak256(_key)];
   }
     
   /* int array */
   
-  function getIntArray(bytes32 _key) external view returns(int[] memory) {
-    return intArray[_key];
+  function getIntArray(bytes memory _key) external view returns(int[] memory) {
+    return intArray[keccak256(_key)];
   }
   
-  function setIntArray(bytes32 _key, int[] memory _value) onlyRole(EDITOR_ROLE) external {
-    intArray[_key] = _value;
+  function setIntArray(bytes memory _key, int[] memory _value) onlyRole(EDITOR_ROLE) external {
+    intArray[keccak256(_key)] = _value;
   }
 
-  function deleteIntArray(bytes32 _key) onlyRole(EDITOR_ROLE) external {
-    delete intArray[_key];
+  function deleteIntArray(bytes memory _key) onlyRole(EDITOR_ROLE) external {
+    delete intArray[keccak256(_key)];
   }
     
   /* uint array */
   
-  function getUintArray(bytes32 _key) external view returns(uint[] memory) {
-    return uintArray[_key];
+  function getUintArray(bytes memory _key) external view returns(uint[] memory) {
+    return uintArray[keccak256(_key)];
   }
   
-  function setUintArray(bytes32 _key, uint[] memory _value) onlyRole(EDITOR_ROLE) external {
-    uintArray[_key] = _value;
+  function setUintArray(bytes memory _key, uint[] memory _value) onlyRole(EDITOR_ROLE) external {
+    uintArray[keccak256(_key)] = _value;
   }
 
-  function deleteUintArray(bytes32 _key) onlyRole(EDITOR_ROLE) external {
-    delete uintArray[_key];
+  function deleteUintArray(bytes memory _key) onlyRole(EDITOR_ROLE) external {
+    delete uintArray[keccak256(_key)];
   }
 
   /* address array */
 
-  function getAddressArray(bytes32 _key) external view returns(address[] memory) {
-    return addressArray[_key];
+  function getAddressArray(bytes memory _key) external view returns(address[] memory) {
+    return addressArray[keccak256(_key)];
   }
 
-  function setAddressArray(bytes32 _key, address[] memory _value) onlyRole(EDITOR_ROLE) external {
-    addressArray[_key] = _value;
+  function setAddressArray(bytes memory _key, address[] memory _value) onlyRole(EDITOR_ROLE) external {
+    addressArray[keccak256(_key)] = _value;
   }
 
-  function deleteAddressArray(bytes32 _key) onlyRole(EDITOR_ROLE) external {
-    delete addressArray[_key];
+  function deleteAddressArray(bytes memory _key) onlyRole(EDITOR_ROLE) external {
+    delete addressArray[keccak256(_key)];
   }
 
   /* bytes32 array */
 
-  function getBytes32Array(bytes32 _key) external view returns(bytes32[] memory) {
-    return bytes32Array[_key];
+  function getBytes32Array(bytes memory _key) external view returns(bytes32[] memory) {
+    return bytes32Array[keccak256(_key)];
   }
 
-  function setBytes32Array(bytes32 _key, bytes32[] memory _value) onlyRole(EDITOR_ROLE) external {
-    bytes32Array[_key] = _value;
+  function setBytes32Array(bytes memory _key, bytes32[] memory _value) onlyRole(EDITOR_ROLE) external {
+    bytes32Array[keccak256(_key)] = _value;
   }
     
-  function deleteBytes32Array(bytes32 _key) onlyRole(EDITOR_ROLE) external {
-    delete bytes32Array[_key];
+  function deleteBytes32Array(bytes memory _key) onlyRole(EDITOR_ROLE) external {
+    delete bytes32Array[keccak256(_key)];
   }
   
   /* bytes array */
 
-  function getBytesArray(bytes32 _key) external view returns(bytes[] memory) {
-    return bytesArray[_key];
+  function getBytesArray(bytes memory _key) external view returns(bytes[] memory) {
+    return bytesArray[keccak256(_key)];
   }
 
-  function setBytesArray(bytes32 _key, bytes[] memory _value) onlyRole(EDITOR_ROLE) external {
-    bytesArray[_key] = _value;
+  function setBytesArray(bytes memory _key, bytes[] memory _value) onlyRole(EDITOR_ROLE) external {
+    bytesArray[keccak256(_key)] = _value;
   }
 
-  function deleteBytesArray(bytes32 _key) onlyRole(EDITOR_ROLE) external {
-    delete bytesArray[_key];
+  function deleteBytesArray(bytes memory _key) onlyRole(EDITOR_ROLE) external {
+    delete bytesArray[keccak256(_key)];
   }
 
   /* string array */
   
-  function getStringArray(bytes32 _key) external view returns(string[] memory) {
-    return stringArray[_key];
+  function getStringArray(bytes memory _key) external view returns(string[] memory) {
+    return stringArray[keccak256(_key)];
   }
     
-  function setStringArray(bytes32 _key, string[] memory _value) onlyRole(EDITOR_ROLE) external {
-    stringArray[_key] = _value;
+  function setStringArray(bytes memory _key, string[] memory _value) onlyRole(EDITOR_ROLE) external {
+    stringArray[keccak256(_key)] = _value;
   }
 
-  function deleteStringArray(bytes32 _key) onlyRole(EDITOR_ROLE) external {
-    delete stringArray[_key];
+  function deleteStringArray(bytes memory _key) onlyRole(EDITOR_ROLE) external {
+    delete stringArray[keccak256(_key)];
   }
   
 }
